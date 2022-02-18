@@ -1,3 +1,4 @@
+import numpy as np
 import streamlit as st
 
 from utils.tools import LoadData
@@ -23,7 +24,16 @@ def main():
     list_recette = LoadData.list_recette(con_database)
     recette = st.selectbox("Recette", list_recette)
     qte = st.number_input(f"Nombre de {recette}", min_value=1)
-    st.write(f"Temps : {int(LoadData.get_time(con_database, recette))} min")
+    minutes = int(LoadData.get_time(con_database, recette))
+    if minutes == 0:
+        minutes = 2
+    if minutes > 60:
+        hour = round(np.floor(minutes / 60))
+        minutes = minutes % 60
+        st.write(f"Temps : {hour} h {minutes} min")
+    else:
+        st.write(f"Temps : {minutes} min")
+    #st.write(f"Temps : {hour}:{minutes} min")
     st.image(LoadData.get_image(con_database, recette))
 
     col1, col2 = st.columns(2)
@@ -31,7 +41,10 @@ def main():
         st.header("Liste des ingrédients")
         dict_ingredients = LoadData.get_ingredients(con_database, recette)
         for ingredient in dict_ingredients:
-            st.write(f""" - {ingredient['quantite'] * qte} {ingredient['mesure']} de {ingredient['libelle']}""")
+            if ingredient['mesure'] == 'pcs':
+                st.write(f""" - {ingredient['quantite'] * qte} {ingredient['libelle']}""")
+            else:
+                st.write(f""" - {ingredient['quantite'] * qte} {ingredient['mesure']} de {ingredient['libelle']}""")
 
     dict_etapes = LoadData.get_etapes(con_database, recette)
 
