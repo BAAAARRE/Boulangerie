@@ -25,7 +25,7 @@ class LoadData:
         return pd.read_sql(sql=f"""
         Select sum(temps)
         FROM Etape
-        LEFT JOIN Recette ON (Etape.ID_Etape = Recette.Id_Recette)
+        LEFT JOIN Recette ON (Etape.ID_Recette = Recette.Id_Recette)
         WHERE Recette.Libelle = '{recette}';
         """, con=con).iloc[0, 0]
 
@@ -37,3 +37,21 @@ class LoadData:
         LEFT JOIN Recette ON (Ingredients.ID_Recette = Recette.Id_Recette)
         WHERE Recette.libelle = '{recette}';
         """, con=con).to_dict(orient='records')
+
+    @staticmethod
+    def get_etapes(con, recette):
+        return pd.read_sql(
+            sql=f"""
+            Select
+            Etape.description,
+            U.type,
+            A.libelle
+            FROM Etape
+            LEFT JOIN Recette ON (Etape.ID_Recette = Recette.Id_Recette)
+            LEFT JOIN Ustensile2Etape U2E on Etape.ID_Etape = U2E.ID_Etape
+            LEFT JOIN Ustensile U on U.ID_Ustensile = U2E.ID_Ustensile
+            LEFT JOIN Appareils2Etape A2E on Etape.ID_Etape = A2E.ID_Etape
+            LEFT JOIN Appareils A on A.ID_Appareils = A2E.ID_Appareils
+            WHERE Recette.libelle = "{recette}";
+            """, con=con
+        ).to_dict(orient='records')

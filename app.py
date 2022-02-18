@@ -18,27 +18,25 @@ def main():
     st.title("Bakery Sagna")
 
 
-    st.subheader("Choisir une recette")
+    st.header("Choisir une recette")
     list_recette = LoadData.list_recette(con_database)
     recette = st.selectbox("Recette", list_recette)
     qte = st.number_input(f"Nombre de {recette}", min_value=1)
     st.write(f"Temps : {int(LoadData.get_time(con_database, recette))} min")
     st.image(LoadData.get_image(con_database, recette))
 
-    st.subheader("Liste des ingrédients")
+    st.header("Liste des ingrédients")
     dict_ingredients = LoadData.get_ingredients(con_database, recette)
     for ingredient in dict_ingredients:
         st.write(f""" - {ingredient['quantite'] * qte} {ingredient['mesure']} de {ingredient['libelle']}""")
 
-    # list_ingredient = ["1 Oeuf", "100g de farine"]
-    # for ingredient in list_ingredient:
-    #     st.write(f"- {ingredient}")
+    st.header("Liste des étapes")
+    dict_etapes = LoadData.get_etapes(con_database, recette)
+    # st.write(dict_etapes)
 
-    st.subheader("Etapes")
-    list_etapes = ["Etape 1 : Mélanger", "Etape 2 : Cuire"]
-    for etape in list_etapes:
-        st.write(f"- {etape}")
-
+    for idx, etape in enumerate(dict_etapes):
+        st.subheader(f" ETAPE {idx + 1}")
+        st.write(etape['libelle'])
 
     # Bottom page
     st.write("\n")
