@@ -31,5 +31,5 @@ create table etape
 );
 
 create unique index etape_id_etape_uindex
-    on etape_name (id_etape);
+    on etape (id_etape);
 
