@@ -1,0 +1,62 @@
+/*
+-- Query: SELECT * FROM aus.Appareils2Etape
+LIMIT 0, 1000
+
+-- Date: 2022-02-18 13:53
+*/
+INSERT INTO `` (`ID_Appareils`,`ID_Etape`) VALUES (2,1);
+INSERT INTO `` (`ID_Appareils`,`ID_Etape`) VALUES (2,2);
+INSERT INTO `` (`ID_Appareils`,`ID_Etape`) VALUES (2,3);
+INSERT INTO `` (`ID_Appareils`,`ID_Etape`) VALUES (2,4);
+INSERT INTO `` (`ID_Appareils`,`ID_Etape`) VALUES (2,5);
+INSERT INTO `` (`ID_Appareils`,`ID_Etape`) VALUES (3,9);
+INSERT INTO `` (`ID_Appareils`,`ID_Etape`) VALUES (2,10);
+INSERT INTO `` (`ID_Appareils`,`ID_Etape`) VALUES (2,11);
+INSERT INTO `` (`ID_Appareils`,`ID_Etape`) VALUES (2,12);
+INSERT INTO `` (`ID_Appareils`,`ID_Etape`) VALUES (3,16);
+INSERT INTO `` (`ID_Appareils`,`ID_Etape`) VALUES (2,17);
+INSERT INTO `` (`ID_Appareils`,`ID_Etape`) VALUES (2,18);
+INSERT INTO `` (`ID_Appareils`,`ID_Etape`) VALUES (2,19);
+INSERT INTO `` (`ID_Appareils`,`ID_Etape`) VALUES (3,23);
+INSERT INTO `` (`ID_Appareils`,`ID_Etape`) VALUES (2,24);
+INSERT INTO `` (`ID_Appareils`,`ID_Etape`) VALUES (2,25);
+INSERT INTO `` (`ID_Appareils`,`ID_Etape`) VALUES (2,26);
+INSERT INTO `` (`ID_Appareils`,`ID_Etape`) VALUES (3,30);
+INSERT INTO `` (`ID_Appareils`,`ID_Etape`) VALUES (4,31);
+INSERT INTO `` (`ID_Appareils`,`ID_Etape`) VALUES (2,32);
+INSERT INTO `` (`ID_Appareils`,`ID_Etape`) VALUES (2,33);
+INSERT INTO `` (`ID_Appareils`,`ID_Etape`) VALUES (2,34);
+INSERT INTO `` (`ID_Appareils`,`ID_Etape`) VALUES (3,38);
+INSERT INTO `` (`ID_Appareils`,`ID_Etape`) VALUES (2,40);
+INSERT INTO `` (`ID_Appareils`,`ID_Etape`) VALUES (2,41);
+INSERT INTO `` (`ID_Appareils`,`ID_Etape`) VALUES (2,42);
+INSERT INTO `` (`ID_Appareils`,`ID_Etape`) VALUES (2,43);
+INSERT INTO `` (`ID_Appareils`,`ID_Etape`) VALUES (2,44);
+INSERT INTO `` (`ID_Appareils`,`ID_Etape`) VALUES (3,48);
+INSERT INTO `` (`ID_Appareils`,`ID_Etape`) VALUES (3,49);
+INSERT INTO `` (`ID_Appareils`,`ID_Etape`) VALUES (2,50);
+INSERT INTO `` (`ID_Appareils`,`ID_Etape`) VALUES (2,51);
+INSERT INTO `` (`ID_Appareils`,`ID_Etape`) VALUES (2,53);
+INSERT INTO `` (`ID_Appareils`,`ID_Etape`) VALUES (3,57);
+INSERT INTO `` (`ID_Appareils`,`ID_Etape`) VALUES (2,58);
+INSERT INTO `` (`ID_Appareils`,`ID_Etape`) VALUES (2,59);
+INSERT INTO `` (`ID_Appareils`,`ID_Etape`) VALUES (2,60);
+INSERT INTO `` (`ID_Appareils`,`ID_Etape`) VALUES (2,61);
+INSERT INTO `` (`ID_Appareils`,`ID_Etape`) VALUES (3,66);
+INSERT INTO `` (`ID_Appareils`,`ID_Etape`) VALUES (2,68);
+INSERT INTO `` (`ID_Appareils`,`ID_Etape`) VALUES (2,69);
+INSERT INTO `` (`ID_Appareils`,`ID_Etape`) VALUES (2,70);
+INSERT INTO `` (`ID_Appareils`,`ID_Etape`) VALUES (2,71);
+INSERT INTO `` (`ID_Appareils`,`ID_Etape`) VALUES (3,77);
+INSERT INTO `` (`ID_Appareils`,`ID_Etape`) VALUES (2,79);
+INSERT INTO `` (`ID_Appareils`,`ID_Etape`) VALUES (2,80);
+INSERT INTO `` (`ID_Appareils`,`ID_Etape`) VALUES (2,81);
+INSERT INTO `` (`ID_Appareils`,`ID_Etape`) VALUES (2,82);
+INSERT INTO `` (`ID_Appareils`,`ID_Etape`) VALUES (2,83);
+INSERT INTO `` (`ID_Appareils`,`ID_Etape`) VALUES (3,88);
+INSERT INTO `` (`ID_Appareils`,`ID_Etape`) VALUES (3,95);
+INSERT INTO `` (`ID_Appareils`,`ID_Etape`) VALUES (3,105);
+INSERT INTO `` (`ID_Appareils`,`ID_Etape`) VALUES (3,110);
+INSERT INTO `` (`ID_Appareils`,`ID_Etape`) VALUES (1,111);
+INSERT INTO `` (`ID_Appareils`,`ID_Etape`) VALUES (3,121);
+INSERT INTO `` (`ID_Appareils`,`ID_Etape`) VALUES (5,147);
