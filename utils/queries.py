@@ -1,4 +1,4 @@
 class LoadDataQueries:
     dict_queries = {
-        'test': 'test'
+        'all_recettes': 'SELECT Libelle FROM Recette'
     }

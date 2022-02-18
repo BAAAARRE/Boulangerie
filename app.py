@@ -3,7 +3,7 @@ import streamlit as st
 from utils.tools import LoadData
 
 
-LoadData.init_connection()
+con_database = LoadData.init_connection()
 
 
 def main():
@@ -15,15 +15,15 @@ def main():
         page_icon=None,  # String, anything supported by st.image, or None.
     )
 
-    # Load data
-    LoadData.init_connection()
-    list_recette = ["Baguette", "Croissant"]
-
     st.title("Bakery Sagna")
 
+
     st.subheader("Choisir une recette")
+    list_recette = LoadData.list_recette(con_database)
     recette = st.selectbox("Recette", list_recette)
     st.number_input(f"Nombre de {recette}", min_value=1)
+    st.write(f"Temps : {int(LoadData.get_time(con_database, recette))} min")
+    st.write(LoadData.get_image(con_database, recette))
 
     st.subheader("Liste des ingrédients")
     list_ingredient = ["1 Oeuf", "100g de farine"]
