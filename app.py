@@ -44,7 +44,10 @@ def main():
             if ingredient['mesure'] == 'pcs':
                 st.write(f""" - {ingredient['quantite'] * qte} {ingredient['libelle']}""")
             else:
-                st.write(f""" - {ingredient['quantite'] * qte} {ingredient['mesure']} de {ingredient['libelle']}""")
+                if ingredient['libelle'].lower()[0] in ['a', 'e', 'i', 'o', 'u', 'y']:
+                    st.write(f""" - {ingredient['quantite'] * qte} {ingredient['mesure']} d'{ingredient['libelle']}""")
+                else:
+                    st.write(f""" - {ingredient['quantite'] * qte} {ingredient['mesure']} de {ingredient['libelle']}""")
 
     dict_etapes = LoadData.get_etapes(con_database, recette)
 
