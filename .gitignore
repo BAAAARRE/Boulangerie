@@ -3,4 +3,3 @@ __pycache__/
 .streamlit/
 .idea/
 .git/
-.env

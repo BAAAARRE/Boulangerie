@@ -28,3 +28,12 @@ class LoadData:
         LEFT JOIN Recette ON (Etape.ID_Etape = Recette.Id_Recette)
         WHERE Recette.Libelle = '{recette}';
         """, con=con).iloc[0, 0]
+
+    @staticmethod
+    def get_ingredients(con, recette):
+        return pd.read_sql(sql=f"""
+        Select Ingredients.*
+        FROM Ingredients
+        LEFT JOIN Recette ON (Ingredients.ID_Recette = Recette.Id_Recette)
+        WHERE Recette.libelle = '{recette}';
+        """, con=con).to_dict(orient='records')

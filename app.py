@@ -21,14 +21,18 @@ def main():
     st.subheader("Choisir une recette")
     list_recette = LoadData.list_recette(con_database)
     recette = st.selectbox("Recette", list_recette)
-    st.number_input(f"Nombre de {recette}", min_value=1)
+    qte = st.number_input(f"Nombre de {recette}", min_value=1)
     st.write(f"Temps : {int(LoadData.get_time(con_database, recette))} min")
-    st.write(LoadData.get_image(con_database, recette))
+    st.image(LoadData.get_image(con_database, recette))
 
     st.subheader("Liste des ingrédients")
-    list_ingredient = ["1 Oeuf", "100g de farine"]
-    for ingredient in list_ingredient:
-        st.write(f"- {ingredient}")
+    dict_ingredients = LoadData.get_ingredients(con_database, recette)
+    for ingredient in dict_ingredients:
+        st.write(f""" - {ingredient['quantite'] * qte} {ingredient['mesure']} de {ingredient['libelle']}""")
+
+    # list_ingredient = ["1 Oeuf", "100g de farine"]
+    # for ingredient in list_ingredient:
+    #     st.write(f"- {ingredient}")
 
     st.subheader("Etapes")
     list_etapes = ["Etape 1 : Mélanger", "Etape 2 : Cuire"]
